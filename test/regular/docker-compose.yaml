@@ -1,0 +1,28 @@
+version: '2'
+services:
+    consul-01:
+        image: consul:0.0
+        entrypoint:
+            - /usr/local/bin/consul
+            - agent
+        command:
+            - -dev
+            - -bootstrap
+            - -server
+            - -data-dir=/tmp
+            - -log-level=info
+            - -client=0.0.0.0
+            - -ui
+        hostname: consul-01
+        ports:
+            - "5011:8300"
+            - "5012:8301"
+            - "5012:8301/udp"
+            - "5013:8302"
+            - "5013:8302/udp"
+            - "5014:8400"
+            - "5015:8500"
+            - "5016:8600"
+            - "5017:53"
+        environment:
+            - DEBUG=working
