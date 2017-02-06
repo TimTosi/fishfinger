@@ -84,6 +84,9 @@ func (c *Compose) Status(service string) (bool, error) {
 
 // Port returns the host address where `service` is bound to `port`. If
 // `service` does not exist or `port` is not bound, it returns an `error`.
+//
+// NOTE: `port` MUST be of the following form `<portNb>/<protocol>` such as
+// `80/tcp`.
 func (c *Compose) Port(service, port string) (string, error) {
 	s, err := c.CreateService(service)
 	if err != nil {
