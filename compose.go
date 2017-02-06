@@ -20,6 +20,8 @@ type Compose struct {
 
 // NewCompose returns a new `Compose` or an `error` if something occurs during
 // setup. It uses `composeFile` as the path to the compose-file to up.
+//
+// NOTE: .env files are not currently supported.
 func NewCompose(composeFile string) (*Compose, error) {
 	p, err := docker.NewProject(
 		&ctx.Context{
