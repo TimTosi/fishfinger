@@ -1,5 +1,4 @@
 version: '2'
 service:
     consul-01:
-        image: consul:0.0
-
+        image: timtosi/consul:latest
