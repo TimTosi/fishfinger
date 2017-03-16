@@ -12,8 +12,8 @@ import (
 
 // -----------------------------------------------------------------------------
 
-// Compose is a structure that implements `Origin`. It uses `libcompose` to
-// manage a Docker environment from a compose-file.
+// Compose is a structure using `libcompose` to manage a Docker environment
+// from a compose-file.
 type Compose struct {
 	*project.Project
 }

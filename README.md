@@ -233,10 +233,6 @@ everything is ready to be processed by the rest of your program.
 
 Complete working code can be found [here](examples/compose-backoff/main.go).
 
-## Use a Single Docker Image
-
-/!\ Coming soon /!\
-
 ## License
 Every file provided here is available under the [MIT License](http://opensource.org/licenses/MIT).
 
