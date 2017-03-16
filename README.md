@@ -5,14 +5,14 @@
 
 ## What is FishFinger ?
 FishFinger is a Dockerfile and Docker-Compose lightweight programmatic library
-written in Go. This project provide easy to use abstractions of official Docker
+written in Go. This project provides easy to use abstractions of official Docker
 libraries with no other dependency than [official Go library](https://github.com/golang/go)
 and [official Docker libraries](https://github.com/docker/).
 
-FishFinger also provide a one possible solution to deal with [container initialization delay](https://github.com/docker/compose/issues/374)
+FishFinger also provides a one possible solution to deal with [container initialization delay](https://github.com/docker/compose/issues/374)
 and makes room for further improvement through user-defined solutions.
 
-This project is fully tested and provide an [extensive documentation](https://godoc.org/github.com/timtosi/fishfinger).
+This project is fully tested and comes with an [extensive documentation](https://godoc.org/github.com/timtosi/fishfinger).
 
 ## Quickstart
 
@@ -31,7 +31,7 @@ Finally, check how to use the components provided:
 
 ## Use a Compose File
 
-The `fishfinger.Compose` component represent an abstraction of the [libcompose](https://github.com/docker/libcompose)
+The `fishfinger.Compose` component represents an abstraction of the [libcompose](https://github.com/docker/libcompose)
 library. It provides functions allowing the user to use a [Compose file](https://docs.docker.com/compose/compose-file/)
 programmatically.
 
@@ -134,8 +134,8 @@ Complete working code can be found [here](examples/compose-basic/main.go).
 ### Backoff Compose Usage
 
 When you want to use Docker in a programmatic way, you can encounter a particular
-issues regarding the definition of a container `ready` state: the container state
-and the state of the software runnning inside the container are decoupled.
+issues regarding the definition of a container's `ready` state: the container state
+and the state of the software running inside the container are decoupled.
 
 That means a container will be considered `ready` regardless of the software
 state, leading to programmatic errors. Moreover, that is not because the main
