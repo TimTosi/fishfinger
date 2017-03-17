@@ -270,27 +270,3 @@ func TestCompose_Info(t *testing.T) {
 		})
 	}
 }
-
-// func TestCompose_Startbackoff(t *testing.T) {
-// 	testCases := []struct {
-// 		name              string
-// 		path              string
-// 		startService      bool
-// 		backOff           func(*Compose, string) error
-// 		expectedErrorFunc func(ensure.Fataler, interface{}, ...interface{})
-// 	}{
-// 		{
-// 			"regular",
-// 			"test/regular/docker-compose.yaml",
-// 		},
-// 	}
-
-// 	for _, tc := range testCases {
-// 		t.Run(tc.name, func(t *testing.T) {
-// 			c, err := NewCompose(tc.path)
-// 			ensure.Nil(t, err)
-// 			ensure.NotNil(t, c)
-
-// 		})
-// 	}
-// }
