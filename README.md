@@ -228,8 +228,9 @@ func SocketBackoff(c *Compose, service string) error {
 
 It's only keep trying to connect to a specific port exposed by the container.
 The fact is the function will not find any remote listener until all data is
-correctly loaded, as you can see [here](#TODO). In this way, you are assured
-everything is ready to be processed by the rest of your program.
+correctly loaded, as you can see [here](https://github.com/TimTosi/mechanist/blob/master/sql/mysqld.sh#L26L29).
+In this way, you are assured everything is ready to be processed by the rest of
+your program.
 
 Complete working code can be found [here](examples/compose-backoff/main.go).
 
