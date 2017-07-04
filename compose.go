@@ -81,7 +81,7 @@ func (c *Compose) Status(service string) (bool, error) {
 	if err != nil || len(ctnrs) == 0 {
 		return false, err
 	}
-	return ctnrs[0].IsRunning(context.Background())
+	return ctnrs[0].IsRunning(context.Background()), nil
 }
 
 // Port returns the host address where `service` is bound to `port`. If
