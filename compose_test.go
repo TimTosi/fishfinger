@@ -86,7 +86,7 @@ func TestCompose_Stop(t *testing.T) {
 			ensure.Nil(t, c.Stop("consul-01"))
 
 			if tc.stopAgain == true {
-				ensure.Nil(t, c.Stop("consul-01"))
+				_ = c.Stop("consul-01")
 			}
 		})
 	}
