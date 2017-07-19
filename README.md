@@ -237,6 +237,10 @@ Complete working code can be found [here](examples/compose-backoff/main.go).
 ## License
 Every file provided here is available under the [MIT License](http://opensource.org/licenses/MIT).
 
+The logo is a derivative of ["BLUE_GOPHER.png"](https://github.com/ashleymcnamara/gophers/blob/master/BLUE_GOPHER.png)
+by [Ashley McNamara](https://github.com/ashleymcnamara), used under [CC BY](https://creativecommons.org/licenses/by/2.0/).
+This logo is licensed under [CC BY](https://creativecommons.org/licenses/by/2.0/) by Tim Tosi.
+
 ## Not Good Enough ?
 If you encouter any issue by using what is provided here, please
 [let me know](https://github.com/TimTosi/fishfinger/issues) ! 
