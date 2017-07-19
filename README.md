@@ -1,4 +1,4 @@
-![FishFinger](assets/fishfinger-logo-640-218.png)
+![FishFinger](assets/fishfinger-logo-610-200.png)
 
 [![GoDoc](https://godoc.org/github.com/timtosi/fishfinger?status.svg)](https://godoc.org/github.com/timtosi/fishfinger)
 [![Go Report Card](https://goreportcard.com/badge/github.com/timtosi/fishfinger)](https://goreportcard.com/report/github.com/timtosi/fishfinger)
