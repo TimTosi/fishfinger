@@ -18,7 +18,7 @@ import (
 // `backoffFunc` that will work for the most simple of use cases, although I
 // strongly recommend you provide your own, safer implementation while doing
 // real work.
-func SocketBackoff(c *Compose, service string, port string) error {
+func SocketBackoff(c *Compose, service, port string) error {
 	var (
 		msg  string
 		conn net.Conn

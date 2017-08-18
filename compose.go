@@ -47,14 +47,12 @@ func (c *Compose) Start(services ...string) error {
 // `backoffFunc` completes. If `services` is empty, all services described in
 // the compose-file are launched and `backoffFunc` is used for each of them.
 //
-// `backoffFunc` takes as input this `*Compose`, service name and port/protocol:
-//
-//  backoffFunc(c, "redis", "6379/tcp")
-//
-// `services` has format "service:port/protocol", e.g., "redis:6379/tcp".
-//
 // NOTE: This project offers default implementations of `backoffFunc` but user
 // should provide an implementation according to the Docker images used.
+//
+// `backoffFunc` takes as input this `*Compose`, service name and port/protocol:
+// `backoffFunc(c, "redis", "6379/tcp")`
+// `services` has format "service:port/protocol", e.g., "redis:6379/tcp".
 func (c *Compose) StartBackoff(backoffFunc func(*Compose, string, string) error, services ...string) error {
 	for _, service := range services {
 		parts := strings.Split(service, ":")
