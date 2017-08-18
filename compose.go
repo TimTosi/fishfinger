@@ -47,7 +47,7 @@ func (c *Compose) Start(services ...string) error {
 // `backoffFunc` completes. If `services` is empty, all services described in
 // the compose-file are launched and `backoffFunc` is used for each of them.
 //
-// `backoffFunc` takes as input this `*Compose`, service name and port/protocol.
+// `backoffFunc` takes as input this `*Compose`, service name and port/protocol:
 //
 //  backoffFunc(c, "redis", "6379/tcp")
 //
