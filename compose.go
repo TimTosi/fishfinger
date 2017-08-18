@@ -3,6 +3,7 @@ package fishfinger
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/docker/libcompose/docker"
 	"github.com/docker/libcompose/docker/ctx"
@@ -46,14 +47,25 @@ func (c *Compose) Start(services ...string) error {
 // `backoffFunc` completes. If `services` is empty, all services described in
 // the compose-file are launched and `backoffFunc` is used for each of them.
 //
+// `backoffFunc` takes as input this `*Compose`, service name and port/protocol.
+//
+//  backoffFunc(c, "redis", "6379/tcp")
+//
+// `services` has format "service:port/protocol", e.g., "redis:6379/tcp".
+//
 // NOTE: This project offers default implementations of `backoffFunc` but user
 // should provide an implementation according to the Docker images used.
-func (c *Compose) StartBackoff(backoffFunc func(*Compose, string) error, services ...string) error {
+func (c *Compose) StartBackoff(backoffFunc func(*Compose, string, string) error, services ...string) error {
 	for _, service := range services {
-		if err := c.Up(context.Background(), options.Up{}, service); err != nil {
+		parts := strings.Split(service, ":")
+		if len(parts) != 2 {
+			return fmt.Errorf("Invalid 'service' parameter %s.  "+
+				"Should have format 'service:port/protocol'.", service)
+		}
+		if err := c.Up(context.Background(), options.Up{}, parts[0]); err != nil {
 			return err
 		}
-		if err := backoffFunc(c, service); err != nil {
+		if err := backoffFunc(c, parts[0], parts[1]); err != nil {
 			return err
 		}
 	}
