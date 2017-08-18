@@ -191,26 +191,27 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if err := c.StartBackoff(fishfinger.SocketBackoff, "datastore"); err != nil {
+	if err := c.StartBackoff(fishfinger.SocketBackoff, "datastore:9090/tcp"); err != nil {
 		log.Fatal(err)
 	}
 }
 ```
 
-This function takes two arguments: the Backoff function used and a list of
-service name that will be started by this function call. The Backoff function
-used here is the one provided by default by the Fishfinger project but you are
-expected to provide another one that suits your need.
+This function takes two arguments: the Backoff function used and a variable
+number of `strings` composed of the service name, a port and a protocol used
+such as `redis:6379/tcp`.The Backoff function used here is the one provided by
+default by the Fishfinger project but you are expected to provide another one
+that suits your needs.
 
 
 ```go
-func SocketBackoff(c *Compose, service string) error {
+func SocketBackoff(c *Compose, service, port string) error {
 	var (
 		msg  string
 		conn net.Conn
 	)
 
-	addr, err := c.Port(service, "9090/tcp")
+	addr, err := c.Port(service, port)
 	if err != nil {
 		return err
 	}
