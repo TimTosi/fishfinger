@@ -53,7 +53,7 @@ func main() {
 	// The Backoff function used here is the one provided by default by the
 	// Fishfinger project but you are expected to provide another one that suits
 	// your need.
-	if err := c.StartBackoff(fishfinger.SocketBackoff, "datastore"); err != nil {
+	if err := c.StartBackoff(fishfinger.SocketBackoff, "datastore:9090/tcp"); err != nil {
 		log.Fatal(err)
 	}
 
